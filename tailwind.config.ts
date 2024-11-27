@@ -4,7 +4,7 @@ export default {
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -68,7 +68,10 @@ export default {
 		fontFamily: {
 			inter: ["var(--font-inter)"],
 			frank: ["var(--font-frank)"],
-		}
+		},
+		backgroundImage: {
+			'noise': "url('https://www.transparenttextures.com/patterns/noise.png')",
+		},
   	}
   },
 } satisfies Config;

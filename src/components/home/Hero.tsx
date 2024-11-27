@@ -4,7 +4,7 @@ import { Download, MoveDown } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <div className="px-[80px] pt-10">
+        <div className="px-[80px] pt-0">
             <div className="flex flex-col">
                 <FadeText
                     className="font-frank text-[128px] font-medium text-textColor dark:text-white"

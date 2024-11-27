@@ -1,6 +1,7 @@
-import Hero from "@/components/home/Hero";
-import NavBar from "@/components/home/NavBar";
 import { frank, inter } from "@/lib/fonts";
+import Card from "@/src/components/home/Card";
+import Hero from "@/src/components/home/Hero";
+import NavBar from "@/src/components/home/NavBar";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         {/* <FloatingNav navItems={navItems} /> */}
         <NavBar/>
         <Hero />
+        <Card/>
       </div>
     </main>
   );
