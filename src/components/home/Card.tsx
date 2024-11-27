@@ -1,4 +1,5 @@
 import { Github, MoveUpRight } from 'lucide-react'
+import Image from 'next/image'
 import React from 'react'
 
 const Card = () => {
@@ -35,7 +36,14 @@ const Card = () => {
                 </div>
             </div>
             <div className="w-[50%]">
-                <h1>Hola 2</h1>
+                <Image
+                    src="/TlaltecLogin.png"
+                    alt="TlaltecProgectMobile"
+                    width={700}
+                    height={700}
+                    className="w-full h-full"
+                    style={{ objectFit: 'cover', borderRadius: 12}}
+                />
             </div>
         </div> 
       </div>
