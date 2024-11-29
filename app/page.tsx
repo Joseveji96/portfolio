@@ -2,6 +2,7 @@ import { frank, inter } from "@/lib/fonts";
 import Card from "@/src/components/home/Card";
 import Hero from "@/src/components/home/Hero";
 import NavBar from "@/src/components/home/NavBar";
+import {proyects} from "../lib/data";
 
 export default function Home() {
   return (
@@ -10,7 +11,14 @@ export default function Home() {
         {/* <FloatingNav navItems={navItems} /> */}
         <NavBar/>
         <Hero />
-        <Card/>
+        <div>
+          {
+            proyects.map((project, index) =>{
+              return <Card key={index} {...project}/>
+            })
+          }
+        </div>
+        
       </div>
     </main>
   );

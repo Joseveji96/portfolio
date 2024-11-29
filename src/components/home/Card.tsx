@@ -2,7 +2,7 @@ import { Github, MoveUpRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
-const Card = () => {
+const Card = ({title, sector, description, image, imageAlt}) => {
   return (
     <div className='flex justify-center h-[600px] my-10'>
         <div className="w-[85%] p-12 rounded-sm shadow-lg" style={{
@@ -21,9 +21,9 @@ const Card = () => {
         <div className="flex h-[100%] justify-between">
             <div className="w-[40%] flex flex-col justify-between">
                 <div className=''>
-                    <h1 className='font-inter text-5xl font-bold'>TlalTec</h1>
-                    <h2 className='font-inter text-2xl font-semibold pt-2'>Mobile Application</h2>
-                    <p className='font-inter pt-5'>Mobile application powered by a powerful SE and efficient artificial vision model that allows preventing, detecting and treating diseases and pests in avocado crops.</p>
+                    <h1 className='font-inter text-5xl font-bold'>{title}</h1>
+                    <h2 className='font-inter text-2xl font-semibold pt-2'>{sector}</h2>
+                    <p className='font-inter pt-5'>{description}</p>
                 </div>
                 <div className='flex gap-5'>
                     <button className="flex gap-2 justify-center items-center border-2 p-2 border-neutral-600" style={{borderRadius: 6}}>
@@ -37,8 +37,8 @@ const Card = () => {
             </div>
             <div className="w-[50%]">
                 <Image
-                    src="/TlaltecLogin.png"
-                    alt="TlaltecProgectMobile"
+                    src={image}
+                    alt={imageAlt}
                     width={700}
                     height={700}
                     className="w-full h-full"
