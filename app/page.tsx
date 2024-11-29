@@ -11,10 +11,10 @@ export default function Home() {
         {/* <FloatingNav navItems={navItems} /> */}
         <NavBar/>
         <Hero />
-        <div>
+        <div className="mb-96">
           {
             proyects.map((project, index) =>{
-              return <Card key={index} {...project}/>
+              return <Card key={index} i={index} {...project}/>
             })
           }
         </div>
