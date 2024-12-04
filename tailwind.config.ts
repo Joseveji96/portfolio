@@ -57,7 +57,7 @@ export default {
   			foreground: 'var(--foreground)',
   			purple: '#4D3685',
 			// textColor: "rgb(157, 170, 179)",
-			textColor: "#1D1D1D",
+			textColor: "#000000",
 			textRed: "#B14B4B"
   		},
   		borderRadius: {
@@ -68,10 +68,15 @@ export default {
 		fontFamily: {
 			inter: ["var(--font-inter)"],
 			frank: ["var(--font-frank)"],
+			dm: ["var(--font-dm)"],
 		},
 		backgroundImage: {
 			'noise': "url('https://www.transparenttextures.com/patterns/noise.png')",
 		},
+		screens: {
+			// 'xs': '480px',  // puedes añadir breakpoints adicionales
+			'3xl': '1800px',  // ejemplo para pantallas muy grandes
+		  }
   	}
   },
 } satisfies Config;
