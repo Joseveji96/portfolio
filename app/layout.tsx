@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 export const metadata: Metadata = {
   title: "Portfolio Eduardo",

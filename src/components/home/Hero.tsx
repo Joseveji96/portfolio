@@ -1,13 +1,17 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { FadeText } from '../ui/fade-text';
 import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
+import { motion } from 'framer-motion';
+import { slideUp } from "../hero/animation" 
+// import { ScrollTrigger } from 'gsap/all';
 
 const Hero = () => {
     // Creamos una referencia para la imagen
     const imageRef = useRef(null);
+
 
     useEffect(() => {
         // Configuramos la rotación continua con GSAP
@@ -19,11 +23,14 @@ const Hero = () => {
         });
     }, []);
 
+
+    
+
     return (
-        <div className="relative px-[80px] pt-0">
+        <div className="relative px-[80px]">
             <div className="flex flex-col 2xl:px-[30px] 3xl:px-[60px]">
                 <FadeText
-                    className="font-dm text-[9rem] 3xl:text-[12rem] font-semibold text-textColor dark:text-white"
+                    className="font-dm leading-tight text-[9rem] 3xl:text-[12rem] font-semibold text-textColor dark:text-white"
                     direction="up"
                     framerProps={{
                         show: { transition: { delay: 0.3 } },
@@ -31,14 +38,16 @@ const Hero = () => {
                     text="EVERY PROJECT"
                 />
                 {/* Añadimos la referencia a la imagen */}
-                <Image
-                    ref={imageRef} // Referencia para GSAP
-                    src={'/x3.png'}
-                    alt={'Shape1'}
-                    width={200}
-                    height={200}
-                    className="absolute 3xl:w-72 -right-20 3xl:-right-32 transform -translate-x-1/2"
-                />
+                <motion.div variants={slideUp} initial="initial" animate="enter" className="absolute flex items-center justify-center -right-16  3xl:-right-32 transform -translate-x-1/2">
+                    <Image
+                        ref={imageRef} // Referencia para GSAP
+                        src={'/x1.png'}
+                        alt={'Shape1'}
+                        width={200}
+                        height={200}
+                        className="block 3xl:w-72"
+                    />
+                </motion.div>
 
                 <div className="flex justify-between">
                     <div className="flex flex-col justify-end h-full">

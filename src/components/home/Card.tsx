@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = React.memo(({
   return (
     <div 
       ref={container} 
-      className='flex justify-center h-[600px] my-10 mb-32 last:mb-0 sticky' 
+      className='parallax-card-end flex justify-center h-[600px] my-10 mb-32 last:mb-0 sticky' 
       style={{ top: `calc(50px + ${i * 10}px)` }}
     >
       <div 
