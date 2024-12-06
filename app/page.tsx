@@ -5,6 +5,8 @@ import Hero from "@/src/components/home/Hero";
 import NavBar from "@/src/components/home/NavBar";
 import {proyects} from "../lib/data";
 import Parallax from "@/src/components/home/Parallax";
+import HeroAlt from "@/src/components/HeroAlt/HeroAlt";
+import AboutSection from "@/src/components/home/About";
 
 
 export default function Home() {
@@ -14,6 +16,7 @@ export default function Home() {
       <div className="bg-background w-full h-screen overflow-x-hidden">
         <NavBar/>
         <Hero />
+        {/* <HeroAlt/> */}
         <Parallax/>
         <div className="mb-96">
           {proyects.map((project, index) => (

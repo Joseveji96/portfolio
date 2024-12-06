@@ -63,8 +63,8 @@ const Hero = () => {
 					}}>Hi! i´m Eduardo, A Web & Mobil developer</h2>
 					<h2>Let´s Transform <span className='font-extrabold text-[#AF2121]'>constraints</span> </h2>
 					<div>
-						<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10}}>Mastepieces</span></h2>
-						
+						<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{ backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10 }}>Mastepieces</span></h2>
+
 					</div>
 				</div>
 				<h1 className='font-light text-9xl uppercase'>Hist
@@ -82,11 +82,12 @@ const Hero = () => {
 									loop
 									muted
 									className="absolute top-0 left-0 object-cover transition-transform transform duration-500 ease-in-out"
-									style={{ borderRadius: 60, 
-										opacity: showVideo ? 1 : 0, 
+									style={{
+										borderRadius: 60,
+										opacity: showVideo ? 1 : 0,
 										// transform: showVideo ? 'scale(1)' : 'scale(0.95)',
-										top: '50%',   
-										left: '50%',  
+										top: '50%',
+										left: '50%',
 										transform: 'translate(-50%, -50%)',
 									}}
 								>
@@ -112,19 +113,33 @@ const Hero = () => {
 
 					ry</h1>
 			</div>
-			<div className="">
-				<div className="">
-					<button className="">
+			<div className="h-20 flex justify-between items-center px-28">
+				<div className="flex gap-16">
+					<button className="font-inter text-[18px] font-extrabold hover:underline decoration-2 flex gap-2">
 						Download CV
 						<Download />
 					</button>
-					<button className="">
+					<button className="font-inter text-[18px] font-extrabold hover:underline decoration-2 flex gap-2">
 						Descargar CV
 						<Download />
 					</button>
 				</div>
-				<MoveDown strokeWidth={2} size={48} />
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ delay: 0.8, duration: 0.5 }}
+					className="mt-0 flex justify-center"
+				>
+					<motion.span
+						animate={{ y: [0, 10, 0] }}
+						transition={{ duration: 2, repeat: Infinity }}
+						className="text-lg text-textColor md:text-xl"
+					>
+						<MoveDown strokeWidth={2} size={48} />
+					</motion.span>
+				</motion.div>
 			</div>
+
 
 		</section>
 	);
