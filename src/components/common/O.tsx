@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const O = ({ showVideo }) => {
   return (
-    <>
+    <span className="relative inline-block">
       {/* Video */}
       <motion.span
         initial={{ opacity: 0 }}
@@ -40,6 +40,6 @@ export const O = ({ showVideo }) => {
       >
         o
       </motion.span>
-    </>
+    </span>
   );
 };

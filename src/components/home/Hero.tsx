@@ -5,7 +5,7 @@ import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
-import { slideUp } from "../hero/animation"
+import { convertO, slideUp } from "../hero/animation"
 // import { ScrollTrigger } from 'gsap/all';
 
 const Hero = () => {
@@ -70,21 +70,29 @@ const Hero = () => {
 				<h1 className='font-light text-9xl uppercase'>Hist
 					<span className="relative inline-block">
 						{showVideo ? (
-							<span
-								className="relative inline-block text-transparent transition-all duration-500 ease-in-out"
+							<motion.span
+								variants={slideUp} initial="initial" animate="enter"
+								className="relative w-full h-full flex justify-center items-center text-transparent transition-transform duration-1000 ease-in-out"
 								style={{ WebkitTextFillColor: 'transparent' }}
 							>
 								o
-								<video
+								<motion.video
+									variants={convertO} initial="initial" animate="enter"
 									autoPlay
 									loop
 									muted
-									className="absolute top-0 left-0 w-full h-full object-cover transition-transform transform duration-500 ease-in-out"
-									style={{ borderRadius: 50, opacity: showVideo ? 1 : 0, transform: showVideo ? 'scale(1)' : 'scale(0.95)' }}
+									className="absolute top-0 left-0 object-cover transition-transform transform duration-500 ease-in-out"
+									style={{ borderRadius: 60, 
+										opacity: showVideo ? 1 : 0, 
+										// transform: showVideo ? 'scale(1)' : 'scale(0.95)',
+										top: '50%',   
+										left: '50%',  
+										transform: 'translate(-50%, -50%)',
+									}}
 								>
 									<source src="video.mp4" type="video/mp4" />
-								</video>
-							</span>
+								</motion.video>
+							</motion.span>
 						) : (
 							<span
 								className="relative inline-block text-transparent bg-clip-text transition-all duration-500 ease-in-out"
