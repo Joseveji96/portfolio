@@ -63,8 +63,8 @@ const Hero = () => {
 					}}>Hi! i´m Eduardo, A Web & Mobil developer</h2>
 					<h2>Let´s Transform <span className='font-extrabold text-[#AF2121]'>constraints</span> </h2>
 					<div>
-						<h2>into code</h2>
-						<h1>Mastepieces</h1>
+						<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10}}>Mastepieces</span></h2>
+						
 					</div>
 				</div>
 				<h1 className='font-light text-9xl uppercase'>Hist
