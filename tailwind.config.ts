@@ -57,7 +57,7 @@ export default {
   			foreground: 'var(--foreground)',
   			purple: '#4D3685',
 			// textColor: "rgb(157, 170, 179)",
-			textColor: "#000000",
+			textColor: "#1D1D1D",
 			textRed: "#B14B4B"
   		},
   		borderRadius: {
