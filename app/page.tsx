@@ -5,8 +5,6 @@ import Hero from "@/src/components/home/Hero";
 import NavBar from "@/src/components/home/NavBar";
 import {proyects} from "../lib/data";
 import Parallax from "@/src/components/home/Parallax";
-import HeroAlt from "@/src/components/HeroAlt/HeroAlt";
-import AboutSection from "@/src/components/home/About";
 
 
 export default function Home() {

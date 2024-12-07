@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
 import { convertO, slideUp } from "../hero/animation"
+import BottonWork from '../Botton/BottonWork';
 
 const Hero = () => {
 	// Creamos una referencia para la imagen
@@ -107,8 +108,8 @@ const Hero = () => {
 
 					ry</h1>
 			</div>
-			<div className="h-20 flex justify-between items-center px-28">
-				<div className="flex gap-16">
+			<div className="h-10 flex justify-between items-center px-28 mt-10">
+				<div className="flex gap-16 items-center">
 					<button className="font-inter text-[18px] font-extrabold hover:underline decoration-2 flex gap-2">
 						Download CV
 						<Download />
@@ -118,20 +119,23 @@ const Hero = () => {
 						<Download />
 					</button>
 				</div>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 0.8, duration: 0.5 }}
-					className="mt-0 flex justify-center"
-				>
-					<motion.span
-						animate={{ y: [0, 10, 0] }}
-						transition={{ duration: 2, repeat: Infinity }}
-						className="text-lg text-textColor md:text-xl"
+				<div className='flex gap-20'>
+					<BottonWork/>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.8, duration: 0.5 }}
+						className="mt-0 flex justify-center"
 					>
-						<MoveDown strokeWidth={2} size={48} />
-					</motion.span>
-				</motion.div>
+						<motion.span
+							animate={{ y: [0, 10, 0] }}
+							transition={{ duration: 2, repeat: Infinity }}
+							className="text-lg text-textColor md:text-xl"
+						>
+							<MoveDown strokeWidth={2} size={48} />
+						</motion.span>
+					</motion.div>
+				</div>
 			</div>
 
 

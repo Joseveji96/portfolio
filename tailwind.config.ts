@@ -9,6 +9,7 @@ export default {
   ],
   theme: {
   	extend: {
+		
   		animation: {
   			first: 'moveVertical 30s ease infinite',
   			second: 'moveInCircle 20s reverse infinite',
@@ -49,7 +50,11 @@ export default {
   				'100%': {
   					transform: 'translateY(-50%)'
   				}
-  			}
+  			},
+			  spin: {
+				'0%': { transform: 'rotate(0deg)' },
+				'100%': { transform: 'rotate(360deg)' },
+			  },
   		},
   		colors: {
   			// background: 'rgb(14, 20, 23)',
@@ -72,11 +77,15 @@ export default {
 		},
 		backgroundImage: {
 			'noise': "url('https://www.transparenttextures.com/patterns/noise.png')",
+			'linear-gradient': 'linear-gradient(90deg, #8184B2 0%, #1D6A66 25%, #376A83 50%, #446790 75%, #8184B2 100%)',
 		},
 		screens: {
 			// 'xs': '480px',  // puedes añadir breakpoints adicionales
 			'3xl': '1800px',  // ejemplo para pantallas muy grandes
-		  }
+		  },
+		  backdropBlur: {
+			'3xl': '20px', // Nivel de desenfoque para backdrop-blur-3xl
+		  },
   	}
   },
 } satisfies Config;
