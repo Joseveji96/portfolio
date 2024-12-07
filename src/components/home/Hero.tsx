@@ -1,12 +1,10 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-import { FadeText } from '../ui/fade-text';
 import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
 import { convertO, slideUp } from "../hero/animation"
-// import { ScrollTrigger } from 'gsap/all';
 
 const Hero = () => {
 	// Creamos una referencia para la imagen
@@ -22,25 +20,21 @@ const Hero = () => {
 	}, []);
 
 	useEffect(() => {
-		// Configuramos la rotación continua con GSAP
 		gsap.to(imageRef.current, {
-			rotation: 360,  // Rotar 360 grados
-			repeat: -1,     // Repetir infinitamente
-			duration: 20,   // Duración de 10 segundos para una rotación completa
-			ease: 'linear', // Animación lineal para rotar uniformemente
+			rotation: 360,  
+			repeat: -1,     
+			duration: 20,   
+			ease: 'linear', 
 		});
 	}, []);
 
-
-
-
 	return (
 		<section className='w-full text-textColor'>
-			<div className='px-28  font-dm font-bold text-9xl uppercase'>
+			<div className='font-dm font-bold text-9xl 3xl:text-[9rem] uppercase tracking-wide px-24 3xl:px-36'>
 				<h1 className='pl-16'>EVERY PROJECT</h1>
-				<div className='flex pl-32'>
+				<div className='flex pt-3 pl-32'>
 					<h1>Can be</h1>
-					<motion.div variants={slideUp} initial="initial" animate="enter" className="mx-12">
+					<motion.div variants={slideUp} initial="initial" animate="enter" className="mx-10">
 						<Image
 							ref={imageRef} // Referencia para GSAP
 							src={"/flor.svg"}
@@ -54,20 +48,20 @@ const Hero = () => {
 
 				</div>
 			</div>
-			<div className='px-56 w-full font-dm flex gap-11'>
-				<div className='text-right font-normal text-3xl'>
+			<div className='px-40 w-full font-dm flex gap-20'>
+				<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal text-3xl'>
 					<h2 className='font-bold text-2xl bg-clip-text text-transparent' style={{
-						backgroundImage: 'linear-gradient(to right, #346FB1, #0C2E44)', // Gradiente de izquierda a derecha
+						backgroundImage: 'linear-gradient(to right, #1D1D1D, #003659)', // Gradiente de izquierda a derecha
 						WebkitBackgroundClip: 'text', // Soporte para navegadores Webkit
 						WebkitTextFillColor: 'transparent', // Texto transparente para mostrar solo el gradiente
 					}}>Hi! i´m Eduardo, A Web & Mobil developer</h2>
-					<h2>Let´s Transform <span className='font-extrabold text-[#AF2121]'>constraints</span> </h2>
+					<h2 className='-translate-x-44'>Let´s Transform <span className='font-extrabold text-[#524848]'>constraints</span> </h2>
 					<div>
 						<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{ backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10 }}>Mastepieces</span></h2>
 
 					</div>
 				</div>
-				<h1 className='font-light text-9xl uppercase'>Hist
+				<h1 className='pt-2 font-light text-9xl uppercase'>Hist
 					<span className="relative inline-block">
 						{showVideo ? (
 							<motion.span
