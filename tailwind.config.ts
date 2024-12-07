@@ -80,7 +80,6 @@ export default {
 			'linear-gradient': 'linear-gradient(90deg, #8184B2 0%, #1D6A66 25%, #376A83 50%, #446790 75%, #8184B2 100%)',
 		},
 		screens: {
-			// 'xs': '480px',  // puedes añadir breakpoints adicionales
 			'3xl': '1800px',  // ejemplo para pantallas muy grandes
 		  },
 		  backdropBlur: {

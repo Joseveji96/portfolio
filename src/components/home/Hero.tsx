@@ -32,7 +32,7 @@ const Hero = () => {
 	return (
 		<section className='w-full text-textColor'>
 			<div className='flex flex-col justify-center items-center gap-2'>
-				<div className=' font-dm font-bold text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
+				<div className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
 					<h1 className='pl-16'>EVERY PROJECT</h1>
 					<div className='flex justify-center items-center pl-32'>
 						<h1>Can be</h1>
@@ -51,8 +51,8 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className='px-40 font-dm flex gap-20 3xl:gap-32'>
-					<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal text-3xl'>
-						<h2 className='font-bold text-2xl bg-clip-text text-transparent' style={{
+					<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal sm:text-xl xl:text-2xl 3xl:text-3xl'>
+						<h2 className='font-bold sm:text-lg xl:text-xl 3xl:text-2xl bg-clip-text text-transparent' style={{
 							backgroundImage: 'linear-gradient(to right, #1D1D1D, #003659)', // Gradiente de izquierda a derecha
 							WebkitBackgroundClip: 'text', // Soporte para navegadores Webkit
 							WebkitTextFillColor: 'transparent', // Texto transparente para mostrar solo el gradiente
@@ -63,7 +63,7 @@ const Hero = () => {
 
 						</div>
 					</div>
-					<h1 className='pt-2 font-light text-9xl uppercase'>Hist
+					<h1 className='pt-2 font-light sm:text-6xl xl:text-7xl 2xl:text-9xl 3xl:text-9xl uppercase'>Hist
 						<span className="relative inline-block">
 							{showVideo ? (
 								<motion.span
