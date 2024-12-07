@@ -4,7 +4,7 @@ import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { motion } from 'framer-motion';
-import { convertO, slideUp } from "../hero/animation"
+import { convertO, slideUp, slideUp2 } from "../hero/animation"
 import BottonWork from '../Botton/BottonWork';
 
 const Hero = () => {
@@ -32,7 +32,7 @@ const Hero = () => {
 	return (
 		<section className='w-full text-textColor'>
 			<div className='flex flex-col justify-center items-center gap-2'>
-				<div className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
+				<motion.div variants={slideUp2} initial="initial" animate="enter" className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
 					<h1 className='pl-16'>EVERY PROJECT</h1>
 					<div className='flex justify-center items-center pl-32'>
 						<h1>Can be</h1>
@@ -49,7 +49,7 @@ const Hero = () => {
 						<h1>a new</h1>
 
 					</div>
-				</div>
+				</motion.div>
 				<div className='px-40 font-dm flex gap-20 3xl:gap-32'>
 					<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal sm:text-xl xl:text-2xl 3xl:text-3xl'>
 						<h2 className='font-bold sm:text-lg xl:text-xl 3xl:text-2xl bg-clip-text text-transparent' style={{
