@@ -22,91 +22,93 @@ const Hero = () => {
 
 	useEffect(() => {
 		gsap.to(imageRef.current, {
-			rotation: 360,  
-			repeat: -1,     
-			duration: 20,   
-			ease: 'linear', 
+			rotation: 360,
+			repeat: -1,
+			duration: 20,
+			ease: 'linear',
 		});
 	}, []);
 
 	return (
 		<section className='w-full text-textColor'>
-			<div className='font-dm font-bold text-9xl 3xl:text-[9rem] uppercase tracking-wide px-24 3xl:px-36'>
-				<h1 className='pl-16'>EVERY PROJECT</h1>
-				<div className='flex pt-3 pl-32'>
-					<h1>Can be</h1>
-					<motion.div variants={slideUp} initial="initial" animate="enter" className="mx-10">
-						<Image
-							ref={imageRef} // Referencia para GSAP
-							src={"/flor.svg"}
-							alt={'Flor'}
-							width={154}
-							height={154}
-							className="block 3xl:w-48"
-						/>
-					</motion.div>
-					<h1>a new</h1>
-
-				</div>
-			</div>
-			<div className='px-40 w-full font-dm flex gap-20'>
-				<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal text-3xl'>
-					<h2 className='font-bold text-2xl bg-clip-text text-transparent' style={{
-						backgroundImage: 'linear-gradient(to right, #1D1D1D, #003659)', // Gradiente de izquierda a derecha
-						WebkitBackgroundClip: 'text', // Soporte para navegadores Webkit
-						WebkitTextFillColor: 'transparent', // Texto transparente para mostrar solo el gradiente
-					}}>Hi! i´m Eduardo, A Web & Mobil developer</h2>
-					<h2 className='-translate-x-44'>Let´s Transform <span className='font-extrabold text-[#524848]'>constraints</span> </h2>
-					<div>
-						<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{ backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10 }}>Mastepieces</span></h2>
+			<div className='flex flex-col justify-center items-center gap-2'>
+				<div className=' font-dm font-bold text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
+					<h1 className='pl-16'>EVERY PROJECT</h1>
+					<div className='flex justify-center items-center pl-32'>
+						<h1>Can be</h1>
+						<motion.div variants={slideUp} initial="initial" animate="enter" className="mx-10">
+							<Image
+								ref={imageRef} // Referencia para GSAP
+								src={"/flor.svg"}
+								alt={'Flor'}
+								width={154}
+								height={154}
+								className="block 3xl:w-48"
+							/>
+						</motion.div>
+						<h1>a new</h1>
 
 					</div>
 				</div>
-				<h1 className='pt-2 font-light text-9xl uppercase'>Hist
-					<span className="relative inline-block">
-						{showVideo ? (
-							<motion.span
-								variants={slideUp} initial="initial" animate="enter"
-								className="relative w-full h-full flex justify-center items-center text-transparent transition-transform duration-1000 ease-in-out"
-								style={{ WebkitTextFillColor: 'transparent' }}
-							>
-								o
-								<motion.video
-									variants={convertO} initial="initial" animate="enter"
-									autoPlay
-									loop
-									muted
-									className="absolute top-0 left-0 object-cover transition-transform transform duration-500 ease-in-out"
+				<div className='px-40 font-dm flex gap-20 3xl:gap-32'>
+					<div className='flex flex-col gap-1 pt-3 pl-28 text-right font-normal text-3xl'>
+						<h2 className='font-bold text-2xl bg-clip-text text-transparent' style={{
+							backgroundImage: 'linear-gradient(to right, #1D1D1D, #003659)', // Gradiente de izquierda a derecha
+							WebkitBackgroundClip: 'text', // Soporte para navegadores Webkit
+							WebkitTextFillColor: 'transparent', // Texto transparente para mostrar solo el gradiente
+						}}>Hi! i´m Eduardo, A Web & Mobil developer</h2>
+						<h2 className='-translate-x-44'>Let´s Transform <span className='font-extrabold text-[#524848]'>constraints</span> </h2>
+						<div>
+							<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{ backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10 }}>Mastepieces</span></h2>
+
+						</div>
+					</div>
+					<h1 className='pt-2 font-light text-9xl uppercase'>Hist
+						<span className="relative inline-block">
+							{showVideo ? (
+								<motion.span
+									variants={slideUp} initial="initial" animate="enter"
+									className="relative w-full h-full flex justify-center items-center text-transparent transition-transform duration-1000 ease-in-out"
+									style={{ WebkitTextFillColor: 'transparent' }}
+								>
+									o
+									<motion.video
+										variants={convertO} initial="initial" animate="enter"
+										autoPlay
+										loop
+										muted
+										className="absolute top-0 left-0 object-cover transition-transform transform duration-500 ease-in-out"
+										style={{
+											borderRadius: 60,
+											opacity: showVideo ? 1 : 0,
+											// transform: showVideo ? 'scale(1)' : 'scale(0.95)',
+											top: '50%',
+											left: '50%',
+											transform: 'translate(-50%, -50%)',
+										}}
+									>
+										<source src="video.mp4" type="video/mp4" />
+									</motion.video>
+								</motion.span>
+							) : (
+								<span
+									className="relative inline-block text-transparent bg-clip-text transition-all duration-500 ease-in-out"
 									style={{
-										borderRadius: 60,
-										opacity: showVideo ? 1 : 0,
-										// transform: showVideo ? 'scale(1)' : 'scale(0.95)',
-										top: '50%',
-										left: '50%',
-										transform: 'translate(-50%, -50%)',
+										backgroundImage: 'url("o.png")',
+										backgroundPosition: 'center',
+										backgroundSize: 'cover',
+										WebkitBackgroundClip: 'text',
+										WebkitTextFillColor: 'transparent',
+										opacity: showVideo ? 0 : 1,
 									}}
 								>
-									<source src="video.mp4" type="video/mp4" />
-								</motion.video>
-							</motion.span>
-						) : (
-							<span
-								className="relative inline-block text-transparent bg-clip-text transition-all duration-500 ease-in-out"
-								style={{
-									backgroundImage: 'url("o.png")',
-									backgroundPosition: 'center',
-									backgroundSize: 'cover',
-									WebkitBackgroundClip: 'text',
-									WebkitTextFillColor: 'transparent',
-									opacity: showVideo ? 0 : 1,
-								}}
-							>
-								o
-							</span>
-						)}
-					</span>
+									o
+								</span>
+							)}
+						</span>
 
-					ry</h1>
+						ry</h1>
+				</div>
 			</div>
 			<div className="h-10 flex justify-between items-center px-28 mt-10">
 				<div className="flex gap-16 items-center">
@@ -120,7 +122,7 @@ const Hero = () => {
 					</button>
 				</div>
 				<div className='flex gap-20'>
-					<BottonWork/>
+					<BottonWork />
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
