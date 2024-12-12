@@ -32,7 +32,7 @@ const NavBar = () => {
         <header className="px-28 m-0 w-full h-32 flex items-center font-dm text-textColor font-medium text-[1.5rem]">
             <div className="w-full">
                 <nav className="relative flex justify-between">
-                    <a ref={titleRef} href="./" className="text-2xl font-bold transition-all duration-300 ease-out transform hover:scale-110" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <a ref={titleRef} href="./" className="transition-all duration-300 ease-out transform hover:scale-110" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                         Eduardo <span className='text-[#524848]'>(Developer)</span>
                     </a>
 

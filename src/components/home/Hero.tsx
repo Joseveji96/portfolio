@@ -33,8 +33,8 @@ const Hero = () => {
 		<section className='w-full text-textColor'>
 			<div className='flex flex-col justify-center items-center gap-2'>
 				<motion.div variants={slideUp2} initial="initial" animate="enter" className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
-					<h1 className='pl-16'>EVERY PROJECT</h1>
-					<div className='flex justify-center items-center pl-32'>
+					<h1 className='pl-0'>EVERY PROJECT</h1>
+					<div className='flex justify-center items-center pl-28'>
 						<h1>Can be</h1>
 						<motion.div variants={slideUp} initial="initial" animate="enter" className="mx-10">
 							<Image
