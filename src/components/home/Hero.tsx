@@ -3,12 +3,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
-import { motion } from 'framer-motion';
+import { motion, MotionValue } from 'framer-motion';
 import { convertO, slideUp, slideUp2 } from "../hero/animation"
 import BottonWork from '../Botton/BottonWork';
 
-const Hero = () => {
-	// Creamos una referencia para la imagen
+interface HeroProps {
+	opacity: MotionValue<number>;
+	translateY: MotionValue<number>;
+}
+
+const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 	const imageRef = useRef(null);
 	const [showVideo, setShowVideo] = useState(true);
 
@@ -31,7 +35,10 @@ const Hero = () => {
 
 	return (
 		<section className='w-full text-textColor'>
-			<div className='flex flex-col justify-center items-center gap-2'>
+			<motion.div
+				style={{ opacity, translateY, transform: translateY }}
+				className='flex flex-col justify-center items-center gap-2'
+			>
 				<motion.div variants={slideUp2} initial="initial" animate="enter" className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
 					<h1 className='pl-0'>EVERY PROJECT</h1>
 					<div className='flex justify-center items-center pl-28'>
@@ -47,7 +54,6 @@ const Hero = () => {
 							/>
 						</motion.div>
 						<h1>a new</h1>
-
 					</div>
 				</motion.div>
 				<div className='px-40 font-dm flex gap-20 3xl:gap-32'>
@@ -60,7 +66,6 @@ const Hero = () => {
 						<h2 className='-translate-x-44'>Let´s Transform <span className='font-extrabold text-[#524848]'>constraints</span> </h2>
 						<div>
 							<h2>into {"<"}code{"/>"} <span className="font-frank italic text-slate-50 px-3" style={{ backgroundImage: "url('/o.png')", backgroundSize: "cover", display: "inline-block", width: "auto", height: "100%", borderRadius: 10 }}>Mastepieces</span></h2>
-
 						</div>
 					</div>
 					<h1 className='pt-2 font-light sm:text-6xl xl:text-7xl 2xl:text-9xl 3xl:text-9xl uppercase'>Hist
@@ -109,7 +114,7 @@ const Hero = () => {
 
 						ry</h1>
 				</div>
-			</div>
+			</motion.div>
 			<div className="h-10 flex justify-between items-center px-28 mt-10">
 				<div className="flex gap-16 items-center">
 					<button className="font-inter text-[18px] font-extrabold hover:underline decoration-2 flex gap-2">
@@ -139,8 +144,6 @@ const Hero = () => {
 					</motion.div>
 				</div>
 			</div>
-
-
 		</section>
 	);
 };

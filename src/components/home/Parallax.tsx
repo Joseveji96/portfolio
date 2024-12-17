@@ -10,7 +10,6 @@ import { DiamondPlus } from 'lucide-react';
 const Parallax = () => {
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-  const one = "";
   return (
     <motion.div className="flex px-28 justify-center h-[1600px] mt-12 mb-52"
       initial={{ opacity: 1 }}
