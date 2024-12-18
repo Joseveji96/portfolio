@@ -38,12 +38,12 @@ const NavBar = () => {
 
                     <div className='flex space-x-6'>
                         <ul className="list-none flex space-x-6">
-                            <li><a className="" href="">Projects</a></li>
-                            <li><a className="" href="">Method</a></li>
-                            <li><a className="" href="">About</a></li>
-                            <li><a className="" href="">Articles</a></li>
+                            <li><a className="navbar-link" href="">Projects</a></li>
+                            <li><a className="navbar-link" href="">Method</a></li>
+                            <li><a className="navbar-link" href="">About</a></li>
+                            <li><a className="navbar-link" href="">Articles</a></li>
                         </ul>
-                        <a href="">Contact Me</a>
+                        <a className='navbar-link' href="">Contact Me</a>
                         <button className="flex gap-4 justify-center items-center border-2 py-[5px] px-[10px] border-black text-sm font-extrabold"
                             style={{ borderRadius: 18 }}
                             onClick={() => setOnDarkTheme(!onDarkTheme)}
