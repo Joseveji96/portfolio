@@ -63,6 +63,7 @@ export default {
   			// background: 'rgb(14, 20, 23)',
   			background: '#F3F3F3',
   			foreground: 'var(--foreground)',
+			btnStackColor: "rgba(22, 22, 22, 0.28)",
   			purple: '#4D3685',
 			// textColor: "rgb(157, 170, 179)",
 			textColor: "#1D1D1D",
