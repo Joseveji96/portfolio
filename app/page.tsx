@@ -12,7 +12,13 @@ export default function Home() {
   
   return (
     <main className={`${inter.variable} ${frank.variable} ${dm.variable}`}>
-      <div className="w-full h-screen">
+      <svg className="grainy-filter">
+        <filter id="grainy">
+          <feTurbulence type="turbulence" baseFrequency="0.5" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+      </svg>
+      <div className="w-full h-screen relative z-10">
         <NavBar/>
         <OverlaySection />
         <div className="mb-96">
