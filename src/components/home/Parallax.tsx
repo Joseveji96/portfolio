@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import Capabilities from './Capabilities';
+import CapabilitiesCard from './Cards/CapabilitiesCard';
 const Parallax = () => {
   return (
     <motion.div className="flex px-28 justify-center h-[1600px] mt-12 mb-52"
@@ -40,6 +41,7 @@ const Parallax = () => {
         }}
       >
         <Capabilities/>
+        <CapabilitiesCard/>
       </motion.div>
     </motion.div>
   );
