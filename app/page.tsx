@@ -21,15 +21,6 @@ export default function Home() {
       <div className="w-full h-screen relative z-10">
         <NavBar/>
         <OverlaySection />
-        <div className="mb-96">
-          {proyects.map((project, index) => (
-            <Card 
-              key={project.id || index} 
-              i={index} 
-              {...project}
-            />
-          ))}
-        </div>
       </div>
     </main>
   );
