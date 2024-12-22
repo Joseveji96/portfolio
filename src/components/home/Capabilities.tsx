@@ -47,7 +47,7 @@ const Capabilities = () => {
             </div>
 
             {/* Tech Lenguajes Stack */}
-            <div className='flex flex-row justify-between mt-auto'>
+            <div className='flex flex-row justify-between mt-32'>
                 <div>
                     <h2 className='text-2xl mb-7'>{"<Tech Lenguajes>"}</h2>
                     <div className='flex flex-row space-x-3'>
