@@ -23,23 +23,49 @@ const RecentProjects = () => {
 				<div key={id} className='flex flex-row justify-between h-screen mb-20'>
 					<div className='w-[55%]'>
 						<div className='h-[90%] relative flex items-center justify-center'>
-							<Image src="/fondo-vid.jpg" alt={project.title} width={900} height={0} className='absolute h-full object-cover opacity-80' style={{borderRadius: 8}} />
-							<video src={project.video} autoPlay loop muted className='relative z-10' width="90%" style={{borderRadius: 12}}/>
-						</div>
-						<div className='flex'>
-						<h1>{project.title}</h1>
-						<h3>{project.sector}</h3>
-							<p>{project.date}</p>
-							{project.workOn.map((work, id) => (
-								<div key={id}>
-									{work}
+							<Image src={project.img} alt={project.title} width={900} height={0} className='absolute h-full object-cover opacity-80' style={{ borderRadius: 8 }} />
+							<div className='absolute z-10 flex flex-col gap-4'>
+								<div className='flex flex-col gap-2 w-[90%] justify-center m-auto'>
+									<div className={`w-fit font-medium text-2xl uppercase px-3 flex items-center rounded-medium`} style={{ backgroundColor: project.backgroundColor }}>
+										<h3 className='leading-none'>{project.sector}</h3>
+									</div>
+									<div className='flex gap-2'>
+										{project.workOn.map((work, id) => (
+											<div key={id} className='bg-blurDark w-fit text-white font-medium text-lg uppercase px-2 flex items-center rounded-medium'>
+												{work}
+											</div>
+										))}
+									</div>
 								</div>
-							))}
+								<video src={project.video} autoPlay loop muted className='relative z-10 self-center' width="90%" style={{ borderRadius: 12 }} />
+							</div>
+						</div>
+						<div className='flex justify-between items-center mt-4'>
+							<h1 className='text-3xl font-semibold'>{project.title}</h1>
+							<p>{project.date}</p>
 						</div>
 					</div>
-					<div className='flex flex-col align-end w-[45%] items-end'>	
+					<div className='flex flex-col align-end w-[45%] items-end'>
 						<h1 className='text-[200px] font-semibold leading-none mb-10'>0{project.id}.</h1>
-						<p className='text-lg font-light max-w-[80%] text-right'>{project.description}</p>
+						<p className='text-lg font-light max-w-[80%] text-right mb-16'>{project.description}</p>
+						<h1 className='mb-6'> {"{"} <span className='font-semibold'>GENERAL STACK</span> {"}"} </h1>
+						<div>
+							<div className='flex flex-wrap justify-end'>
+								{project.stackUX.map((stack, id) => (
+									<span key={id} className='mr-2'>({stack})</span>
+								))}
+							</div>
+							<div className='flex flex-wrap justify-end'>
+								{project.stackFront.map((stack, id) => (
+									<span key={id} className='mr-2'>({stack})</span>
+								))}
+							</div>
+							<div className='flex flex-wrap justify-end'>
+								{project.stackBack.map((stack, id) => (
+									<span key={id} className='mr-2'>({stack})</span>
+								))}
+							</div>
+						</div>
 					</div>
 				</div>
 			))}
