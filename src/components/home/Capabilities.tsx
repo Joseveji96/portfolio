@@ -31,7 +31,7 @@ export const lenguajesStack = [
 ]
 const Capabilities = () => {
     return (
-        <div className='font-dm w-full h-2/5 flex flex-col pb-10 border-b-2 border-[#a2a2a2d6]'>
+        <div className='font-dm p-12 w-full h-2/5 flex flex-col pb-10 border-b-2 border-[#a2a2a2d6]'>
             <div className='w-fit'>
                 <h1 className='text-9xl uppercase font-bold'>Capabilities</h1>
                 <div className='mt-5 h-[1.5px] bg-[#555050]' />

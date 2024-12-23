@@ -34,7 +34,7 @@ const RecentProjects = () => {
 	}, []);
 
 	return (
-		<div className="font-dm w-full">
+		<div className="font-dm w-full p-12">
 			{/* Header Section */}
 			<div className="mb-10 flex flex-col pb-10 border-b-2 border-[#a2a2a2d6]">
 				<div className="w-fit">

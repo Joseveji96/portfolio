@@ -62,6 +62,7 @@ export default {
   		colors: {
   			// background: 'rgb(14, 20, 23)',
   			background: '#F3F3F3',
+  			backgroundParallax: 'rgba(211, 211, 211, 1)',
   			foreground: 'var(--foreground)',
 			btnStackColor: "rgba(22, 22, 22, 0.28)",
 			blurRosa: "rgba(161, 102, 102, 0.78)",

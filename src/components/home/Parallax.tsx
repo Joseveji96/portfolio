@@ -22,9 +22,9 @@ const Parallax = () => {
         margin: "-200px 0px -400px 0px"
 
       }}>
-      <motion.div className="h-full w-full bg-cover bg-center p-12 flex flex-col"
-      // backgroundImage: 'url("/imgFond.jpg")',
-        style={{ backgroundColor: "rgba(210, 210, 210, 1)",  borderRadius: 14 }}
+      <motion.div className="h-full w-full bg-cover bg-center flex flex-col"
+        // backgroundImage: 'url("/imgFond.jpg")',
+        style={{ backgroundColor: "rgba(210, 210, 210, 1)", borderRadius: 14 }}
         initial={{ opacity: 1 }}
         whileInView={{
           opacity: 1,
@@ -41,9 +41,9 @@ const Parallax = () => {
 
         }}
       >
-        <Capabilities/>
-        <CapabilitiesCard/>
-        <RecentProjects/>
+        <Capabilities />
+        <CapabilitiesCard />
+        <RecentProjects />
       </motion.div>
     </motion.div>
   );
