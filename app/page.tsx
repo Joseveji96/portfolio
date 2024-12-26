@@ -4,6 +4,7 @@ import { frank, inter, dm } from "@/lib/fonts";
 import NavBar from "@/src/components/home/NavBar";
 import OverlaySection from "@/src/components/home/OverlaySection";
 import AboutSection from "@/src/components/home/About";
+import Articles from '@/src/components/home/Articles';
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="w-full h-screen relative z-10">
         <NavBar/>
         <OverlaySection />
+        <Articles/>
         <AboutSection/>
       </div>
     </main>
