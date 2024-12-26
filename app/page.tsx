@@ -1,11 +1,9 @@
 "use client"
+import React from 'react';
 import { frank, inter, dm } from "@/lib/fonts";
-import Card from "@/src/components/home/Card";
-// import Hero from "@/src/components/home/Hero";
 import NavBar from "@/src/components/home/NavBar";
-import {proyects} from "../lib/data";
 import OverlaySection from "@/src/components/home/OverlaySection";
-// import Parallax from "@/src/components/home/Parallax";
+import AboutSection from "@/src/components/home/About";
 
 
 export default function Home() {
@@ -21,6 +19,7 @@ export default function Home() {
       <div className="w-full h-screen relative z-10">
         <NavBar/>
         <OverlaySection />
+        <AboutSection/>
       </div>
     </main>
   );

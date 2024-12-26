@@ -28,7 +28,7 @@ const Parallax = () => {
         initial={{ opacity: 1 }}
         whileInView={{
           opacity: 1,
-          padding: 90,
+          // padding: 90,
           borderRadius: 0,
           transition: {
             duration: 0.5,

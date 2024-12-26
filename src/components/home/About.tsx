@@ -4,7 +4,7 @@ import { DiamondPlus } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section className='flex flex-row justify-between'>
+    <section className='flex flex-row justify-between p-12'>
       <div className='flex flex-col'>
         <h1 className="text-8xl font-dm font-normal">About</h1>
         {/* <Image src={"/flor.svg"} alt={'Flor'} width={66} height={64} className="block 3xl:w-20 sticky top-[600px]"/> */}
