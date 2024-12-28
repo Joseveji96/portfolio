@@ -1,6 +1,5 @@
 'use client'
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import { DiamondPlus } from 'lucide-react';
 import Image from "next/image";
 
 export default function AboutSection() {
