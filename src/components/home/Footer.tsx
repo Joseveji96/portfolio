@@ -73,7 +73,7 @@ const Footer = () => {
             <div className="text-right text-3xl text-gray-400 z-50 flex flex-col items-end">
                 <p>&copy; 2024 EDUARDO VELAZCO</p>
                 <p>All Rights reserved</p>
-                <Link href="#" className='px-5 w-20 py-4 border rounded-xl border-white mt-10 flex justify-center hover:bg-zinc-800 transition-colors'>
+                <Link href="#hero" className='px-5 w-20 py-4 border rounded-xl border-white mt-10 flex justify-center hover:bg-zinc-800 transition-colors'>
                     <Image src={"/up.svg"} width={22} height={22} alt='up'/>
                 </Link>
             </div>

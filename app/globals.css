@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .clamp-text {
     font-size: clamp(2rem, 5vw, 9rem);
 }

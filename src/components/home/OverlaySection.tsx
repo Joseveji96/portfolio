@@ -39,7 +39,7 @@ const OverlaySection = () => {
     );
 
     return (
-        <div ref={containerRef} className="relative min-h-screen">
+        <div ref={containerRef} className="relative min-h-screen" id=''>
             {/* Hero Section */}
             <motion.div 
                 className="fixed inset-x-2 inset-y-32"

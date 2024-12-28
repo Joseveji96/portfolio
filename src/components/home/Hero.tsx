@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 				style={{ opacity, translateY, transform: translateY }}
 				className='flex flex-col justify-center items-center gap-2'
 			>
-				<motion.div variants={slideUp2} initial="initial" animate="enter" className=' font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
+				<motion.div variants={slideUp2} initial="initial" animate="enter" className='font-dm font-bold text-sm sm:text-6xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-24 3xl:px-36'>
 					<h1 className='pl-0'>EVERY PROJECT</h1>
 					<div className='flex justify-center items-center pl-28'>
 						<h1>Can be</h1>
@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 								alt={'Flor'}
 								width={154}
 								height={154}
-								className="block 3xl:w-48"
+								className="block 2xl:w-32 3xl:w-48"
 							/>
 						</motion.div>
 						<h1>a new</h1>
