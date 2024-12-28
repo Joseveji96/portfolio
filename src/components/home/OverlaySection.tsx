@@ -15,28 +15,51 @@ const OverlaySection = () => {
         }
     }, []);
 
-    // Animaciones del Hero (opacidad y desplazamiento hacia abajo)
+    // Animaciones del Hero
     const opacity = useTransform(scrollY, [0, 600], [1, 0]);
     const translateYHero = useTransform(scrollY, [0, 600], [10, 100]);
+    
+    // Control de z-index para el Hero
+    const heroZIndex = useTransform(scrollY, 
+        [0, 300, 301], // valores de scroll
+        [2, 2, -1]     // valores de z-index correspondientes
+    );
 
-    // Animación de Parallax (desplazamiento hacia arriba)
-    const translateYParallax = useTransform(scrollY, [300, innerHeight], [innerHeight-200, 0]);
+    // Animación de Parallax
+    const translateYParallax = useTransform(
+        scrollY, 
+        [300, innerHeight], 
+        [innerHeight - 200, 0]
+    );
+
+    // Control de z-index para Parallax
+    const parallaxZIndex = useTransform(scrollY,
+        [0, 0, 0],
+        [1, 1, 2]
+    );
 
     return (
-        <div ref={containerRef} className="relative">
-            {/* Hero con animación de opacidad y desplazamiento hacia abajo */}
+        <div ref={containerRef} className="relative min-h-screen" id=''>
+            {/* Hero Section */}
             <motion.div 
                 className="fixed inset-x-2 inset-y-32"
-                style={{ opacity, translateY: translateYHero }}
+                style={{ 
+                    opacity, 
+                    translateY: translateYHero,
+                    zIndex: heroZIndex,
+                    pointerEvents: useTransform(opacity, value => value <= 0.1 ? 'none' : 'auto')
+                }}
             >
                 <Hero opacity={opacity} translateY={translateYHero} />
-
             </motion.div>
 
-            {/* Parallax con animación de desplazamiento hacia arriba */}
+            {/* Parallax Section */}
             <motion.div 
-                className="relative z-10"
-                style={{ translateY: translateYParallax }}
+                className="relative"
+                style={{ 
+                    translateY: translateYParallax,
+                    zIndex: parallaxZIndex
+                }}
             >
                 <Parallax />
             </motion.div>

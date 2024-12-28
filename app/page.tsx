@@ -18,7 +18,7 @@ export default function Home() {
           <feColorMatrix type="saturate" values="0" />
         </filter>
       </svg>
-      <div className="w-full h-screen relative z-10">
+      <div className="w-full h-screen relative">
         <NavBar/>
         <OverlaySection />
         <Articles/>

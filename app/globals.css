@@ -3,17 +3,25 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .clamp-text {
     font-size: clamp(2rem, 5vw, 9rem);
 }
 
-.navbar-link {
+.navbar-link, .navbar-link-white {
   color: #18272F;
   position: relative;
   text-decoration: none;
 }
 
-.navbar-link::before {
+.navbar-link-white{
+  color: #fff !important;
+}
+
+.navbar-link::before, .navbar-link-white::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -26,7 +34,11 @@
   transition: transform .3s ease-in-out;
 }
 
-.navbar-link:hover::before {
+.navbar-link-white::before {
+  background-color: #fff;
+}
+
+.navbar-link:hover::before, .navbar-link-white:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
