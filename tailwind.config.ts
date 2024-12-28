@@ -75,7 +75,7 @@ export default {
 			textRed: "#B14B4B"
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
+  			lg: 'calc(var(--radius) - 1px)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
