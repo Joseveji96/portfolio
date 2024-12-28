@@ -5,6 +5,7 @@ import NavBar from "@/src/components/home/NavBar";
 import OverlaySection from "@/src/components/home/OverlaySection";
 import AboutSection from "@/src/components/home/About";
 import Articles from '@/src/components/home/Articles';
+import Footer from '@/src/components/home/Footer';
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <OverlaySection />
         <Articles/>
         <AboutSection/>
+        <Footer/>
       </div>
     </main>
   );
