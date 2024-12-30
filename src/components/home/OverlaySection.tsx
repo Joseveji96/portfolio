@@ -7,44 +7,44 @@ import { useScroll, motion, useTransform } from "framer-motion"
 const OverlaySection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll();
-    const [innerHeight, setInnerHeight] = useState(0);
+    const [viewportHeight, setViewportHeight] = useState(0);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setInnerHeight(window.innerHeight);
+            setViewportHeight(window.innerHeight);
         }
     }, []);
 
-    // Animaciones del Hero
-    const opacity = useTransform(scrollY, [0, 600], [1, 0]);
-    const translateYHero = useTransform(scrollY, [0, 600], [10, 100]);
-    
-    // Control de z-index para el Hero
+    // Hero animations
+    const opacity = useTransform(scrollY, [0, viewportHeight * 0.6], [1, 0]);
+    const translateYHero = useTransform(scrollY, [0, viewportHeight * 0.6], [0, 100]);
+
+    // Hero z-index control
     const heroZIndex = useTransform(scrollY, 
-        [0, 300, 301], // valores de scroll
-        [2, 2, -1]     // valores de z-index correspondientes
+        [0, viewportHeight * 0.3, viewportHeight * 0.31],
+        [2, 2, -1]
     );
 
-    // Animación de Parallax
+    // Parallax animations
     const translateYParallax = useTransform(
-        scrollY, 
-        [300, innerHeight], 
-        [innerHeight - 200, 0]
+        scrollY,
+        [300, viewportHeight],
+        [viewportHeight - 200, 0]
     );
 
-    // Control de z-index para Parallax
+    // Parallax z-index control
     const parallaxZIndex = useTransform(scrollY,
         [0, 0, 0],
         [1, 1, 2]
     );
 
     return (
-        <div ref={containerRef} className="relative min-h-screen" id=''>
+        <div ref={containerRef} className="relative min-h-screen">
             {/* Hero Section */}
-            <motion.div 
-                className="fixed inset-x-0 inset-y-32"
-                style={{ 
-                    opacity, 
+            <motion.div
+                className="fixed inset-0 flex items-center justify-center"
+                style={{
+                    opacity,
                     translateY: translateYHero,
                     zIndex: heroZIndex,
                     pointerEvents: useTransform(opacity, value => value <= 0.1 ? 'none' : 'auto')
@@ -54,9 +54,9 @@ const OverlaySection = () => {
             </motion.div>
 
             {/* Parallax Section */}
-            <motion.div 
-                className="relative"
-                style={{ 
+            <motion.div
+                className="relative w-full mt-[calc(100vh-660px)]  lg:mt-[calc(100vh-700px)]"
+                style={{
                     translateY: translateYParallax,
                     zIndex: parallaxZIndex
                 }}

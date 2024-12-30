@@ -34,12 +34,12 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 	}, []);
 
 	return (
-		<section className='w-screen text-textColor'>
+		<section className='w-screen  text-textColor'>
 			<motion.div
 				style={{ opacity, translateY, transform: translateY }}
 				className='flex flex-col justify-center items-center gap-2'
 			>
-				<motion.div variants={slideUp2} initial="initial" animate="enter" className='font-dm font-bold text-5xl sm:text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-4 sm:px-5 md:px-6 xl:px-24 3xl:px-36'>
+				<motion.div variants={slideUp2} initial="initial" animate="enter" className='font-dm font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] 2xl:text-9xl 3xl:text-[10rem] uppercase tracking-wide px-4 sm:px-5 md:px-6 xl:px-24 3xl:px-36'>
 					<h1 className='pl-0 text-center sm:text-left'>EVERY PROJECT</h1>
 					<div className='flex flex-row justify-center items-center sm:pl-6 xl:pl-28'>
 						<h1 className='text-center sm:text-left'>Can be</h1>
@@ -58,8 +58,8 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 				</motion.div>
 				{/* Description On Desktop */}
 				<div className='px-4 md:px-18 xl:px-36 font-dm flex flex-col sm:flex-row gap-4 xl:gap-20 3xl:gap-32'>
-					<div className='hidden sm:flex flex-col gap-1 pt-3 xl:pl-28 text-center sm:text-right font-normal text-lg sm:text-base md:text-xl xl:text-2xl 3xl:text-3xl'>
-						<h2 className='font-bold text-base md:text-lg xl:text-xl 3xl:text-2xl bg-clip-text text-transparent sm:pl-5' style={{
+					<div className='hidden sm:flex flex-col gap-1 pt-3 xl:pl-28 text-center sm:text-right font-normal text-lg sm:text-base md:text-xl lg:text-2xl 3xl:text-3xl'>
+						<h2 className='font-bold text-base md:text-lg lg:text-xl 3xl:text-2xl bg-clip-text text-transparent sm:pl-5' style={{
 							backgroundImage: 'linear-gradient(to right, #1D1D1D, #003659)',
 							WebkitBackgroundClip: 'text',
 							WebkitTextFillColor: 'transparent',
@@ -70,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 						</div>
 					</div>
 					{/* History */}
-					<h1 className='sm:pr-5 sm:pt-2 font-light text-6xl sm:text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-9xl uppercase text-center sm:text-left whitespace-nowrap'>Hist
+					<h1 className='sm:pr-5 sm:pt-2 font-light text-6xl sm:text-7xl lg:text-8xl 2xl:text-9xl 3xl:text-9xl uppercase text-center sm:text-left whitespace-nowrap'>Hist
 						<span className="relative inline-block">
 							{showVideo ? (
 								<motion.span
