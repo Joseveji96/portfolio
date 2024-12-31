@@ -1,7 +1,11 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Image from "next/image"
-import { FaReact, FaJs, FaPython, FaJava } from 'react-icons/fa';
-import { TbBrandCpp, TbBrandCSharp  } from "react-icons/tb";
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { FaReact, FaJs, FaPython, FaJava } from 'react-icons/fa'
+import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb"
 
 export const lenguajesStack = [
     {
@@ -26,42 +30,117 @@ export const lenguajesStack = [
     },
     {
         name: "C#",
-        icon: <TbBrandCSharp /> 
+        icon: <TbBrandCSharp />
     }
 ]
+
 const Capabilities = () => {
+    const controls = useAnimation()
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    })
+    const [hasAnimated, setHasAnimated] = useState(false)
+
+    useEffect(() => {
+        if (inView && !hasAnimated) {
+            controls.start("visible")
+            setHasAnimated(true)
+        }
+    }, [controls, inView, hasAnimated])
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.8, when: "beforeChildren", staggerChildren: 0.2 }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    }
+
     return (
-        <div className='font-dm p-12 w-full h-2/5 flex flex-col pb-10 border-b-2 border-[#a2a2a2d6]'>
-            <div className='w-fit'>
+        <motion.div 
+            ref={ref}
+            className='font-dm p-12 w-full h-2/5 flex flex-col pb-10 border-b-2 border-[#a2a2a2d6]'
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+        >
+            <motion.div 
+                className='w-fit'
+                variants={itemVariants}
+            >
                 <h1 className='text-9xl uppercase font-bold'>Capabilities</h1>
-                <div className='mt-5 h-[1.5px] bg-[#555050]' />
-            </div>
+                <motion.div 
+                    className='mt-5 h-[1.5px] bg-[#555050]'
+                    variants={{
+                        hidden: { width: 0 },
+                        visible: { width: '100%', transition: { duration: 0.8, delay: 0.5 } }
+                    }}
+                />
+            </motion.div>
 
-            {/* Capabilities P */}
-            <div className='flex flex-col justify-between mt-7'>
+            <motion.div 
+                className='flex flex-col justify-between mt-7'
+                variants={itemVariants}
+            >
                 <div className='flex flex-row justify-between'>
-                    <p className='text-4xl font-semibold w-4/5'>In search to design & develop software that works efficiently, improves the
-                        user experience and provides real value to companies.</p>
-                    <h2 className='text-2xl text-[#153647]'>[Areas of Approach]</h2>
+                    <motion.p 
+                        className='text-4xl font-semibold w-4/5'
+                        variants={itemVariants}
+                    >
+                        In search to design & develop software that works efficiently, improves the
+                        user experience and provides real value to companies.
+                    </motion.p>
+                    <motion.h2 
+                        className='text-2xl text-[#153647]'
+                        variants={itemVariants}
+                    >
+                        [Areas of Approach]
+                    </motion.h2>
                 </div>
-            </div>
+            </motion.div>
 
-            {/* Tech Lenguajes Stack */}
-            <div className='flex flex-row justify-between mt-32'>
+            <motion.div 
+                className='flex flex-row justify-between mt-32'
+                variants={itemVariants}
+            >
                 <div>
-                    <h2 className='text-2xl mb-7'>{"<Tech Lenguajes>"}</h2>
+                    <motion.h2 
+                        className='text-2xl mb-7'
+                        variants={itemVariants}
+                    >
+                        {"<Tech Lenguajes>"}
+                    </motion.h2>
                     <div className='flex flex-row space-x-3'>
                         {lenguajesStack.map((lenguaje, index) => (
-                            <div key={index} title={lenguaje.name} className='h-10 flex items-center gap-3 border-2 border-btnStackColor p-2 rounded-xl'>
+                            <motion.div 
+                                key={index} 
+                                title={lenguaje.name} 
+                                className='h-10 flex items-center gap-3 border-2 border-btnStackColor p-2 rounded-xl'
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                            >
                                 {lenguaje.icon} {lenguaje.name}
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
-                <Image src={"/flor.svg"} alt={'Flor'} width={64} height={64} className="block 3xl:w-20 sticky top-[600px]" />
-            </div>
-        </div>
-
+                <motion.div
+                    variants={{
+                        hidden: { rotate: -180, opacity: 0 },
+                        visible: { rotate: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
+                    }}
+                >
+                    <Image src={"/flor.svg"} alt={'Flor'} width={64} height={64} className="block 3xl:w-20 sticky top-[600px]" />
+                </motion.div>
+            </motion.div>
+        </motion.div>
     )
 }
 
