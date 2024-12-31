@@ -42,7 +42,7 @@ const OverlaySection = () => {
         <div ref={containerRef} className="relative min-h-screen">
             {/* Hero Section */}
             <motion.div
-                className="fixed inset-0 flex items-center justify-center"
+                className="fixed flex items-center justify-center"
                 style={{
                     opacity,
                     translateY: translateYHero,
