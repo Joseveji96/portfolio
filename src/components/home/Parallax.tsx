@@ -1,26 +1,24 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import React from 'react'
-import Capabilities from './Capabilities'
-import CapabilitiesCard from './Cards/CapabilitiesCard'
-import RecentProjects from './RecentProjects'
+import { motion } from 'framer-motion';
+import React from 'react';
+import Capabilities from './Capabilities';
+import CapabilitiesCard from './Cards/CapabilitiesCard';
+import RecentProjects from './RecentProjects';
 
 const Parallax = () => {
   return (
     <motion.div
-      className="flex justify-center h-auto mt-0 sm:mt-5 mb-28"
-      initial={{ opacity: 1, padding: '0px 112px' }}
+      className="flex justify-center h-auto mt-0 sm:mt-5 mb-28 sm:px-[50px] px-0" // Clases de padding responsivo
+      initial={{ opacity: 1 }}
       whileInView={{
         opacity: 1,
-        padding: 0,
+        padding: 0, // Aquí definimos la animación de padding dinámico
         transition: {
           duration: 0.5,
         },
       }}
       exit={{
         opacity: 1,
-        padding: '0px 112px',
+        padding: '0px 50px', // Padding en la salida
         transition: {
           duration: 0.5,
         },
@@ -56,7 +54,7 @@ const Parallax = () => {
         <RecentProjects />
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
 export default Parallax;

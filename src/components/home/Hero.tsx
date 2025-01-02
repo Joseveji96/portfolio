@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ opacity, translateY }) => {
 								alt={'Flor'}
 								width={100}
 								height={100}
-								className="block w-14 md:w-24 3xl:w-48"
+								className="block w-14 md:w-24 lg:w-32 3xl:w-48"
 							/>
 						</motion.div>
 						<h1 className='text-center sm:text-left'>a new</h1>

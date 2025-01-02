@@ -50,7 +50,7 @@ const Footer = () => {
                     </div>
                     <ul className='space-y-1'>
                         <li><a className="navbar-link-white" href="">Home</a></li>
-                        <li><a className="navbar-link-white" href="">Projects</a></li>
+                        <li><a className="navbar-link-white" href="#recent-projects">Projects</a></li>
                         <li><a className="navbar-link-white" href="">Method</a></li>
                         <li><a className="navbar-link-white" href="">About</a></li>
                         <li><a className="navbar-link-white" href="">Articles</a></li>
