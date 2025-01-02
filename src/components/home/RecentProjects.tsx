@@ -64,7 +64,8 @@ const RecentProjects = () => {
 							className="min-h-screen sm:mb-16 md:mb-20"
 						>
 							<div className="h-screen flex flex-col">
-								<div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90%]">
+							<div className="relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[90vh]">
+
 									<Image
 										src={project.img}
 										alt={project.title}
@@ -112,7 +113,7 @@ const RecentProjects = () => {
 								</div>
 
 								{/* Contador y Descripción para pantallas menores a md */}
-								<div className="flex flex-row md:hidden gap-10 mt-4">
+								<div className="flex flex-row lg:hidden gap-10 mt-4">
 									<div className="text-lg sm:text-xl md:text-2xl font-bold">
 										<FlipNumber number={id + 1}/>
 									</div>
@@ -126,7 +127,7 @@ const RecentProjects = () => {
 				</div>
 
 				{/* Fixed Info Container para pantallas md y mayores */}
-				<div className="hidden md:block w-full lg:w-[45%] lg:sticky lg:top-0 lg:h-screen mt-8 lg:mt-0">
+				<div className="hidden lg:block w-full lg:w-[45%] lg:sticky lg:top-0 lg:h-screen mt-8 lg:mt-0">
 					<div className="h-full">
 						<div className="flex flex-col w-full h-full">
 							<div className="transition-all duration-500 transform flex flex-col h-full justify-between">
