@@ -6,8 +6,8 @@ import FlipNumber from '../common/FlipNumber';
 
 const RecentProjects = () => {
 	const [activeProject, setActiveProject] = useState(0);
-	const projectRefs = useRef([]);
-	const sectionRef = useRef(null);
+	const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+	const sectionRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
 		const section = sectionRef.current;
@@ -60,7 +60,9 @@ const RecentProjects = () => {
 					{proyects.map((project, id) => (
 						<div
 							key={id}
-							ref={el => projectRefs.current[id] = el}
+							ref={el => {
+								projectRefs.current[id] = el;
+							}}
 							className="min-h-screen sm:mb-16 md:mb-20"
 						>
 							<div className="h-screen flex flex-col">
