@@ -63,7 +63,7 @@ const NavBar = () => {
                     {/* Desktop menu */}
                     <div className='hidden lg:flex lg:items-center lg:space-x-4'>
                         <ul className="list-none flex space-x-4">
-                            <li><a className="navbar-link" href="">Projects</a></li>
+                            <li><a className="navbar-link" href="#recent-projects">Projects</a></li>
                             <li><a className="navbar-link" href="">Method</a></li>
                             <li><a className="navbar-link" href="">About</a></li>
                             <li><a className="navbar-link" href="">Articles</a></li>

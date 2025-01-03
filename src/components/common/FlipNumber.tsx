@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react'
 const FlipNumber = ({ number }: { number: number }) => {
     return (
-        <div className="relative text-[200px] font-semibold leading-none mb-10 flex justify-end">
+        <div className="relative text-4xl lg:text-[200px] font-semibold leading-none mb-20 flex justify-end">
             <div>0</div>
             <div className="relative h-[200px] overflow-hidden">
                 <AnimatePresence mode="wait">
