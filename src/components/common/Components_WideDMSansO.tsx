@@ -27,31 +27,31 @@ const WideDMSansO: React.FC<WideDMSansOProps> = ({ width, height, style = 'norma
   const gapWidth = Math.max(0, width - height)
 
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d={`
-          M ${strokeWidth / 2} ${centerY}
-          A ${radius} ${radius} 0 0 1 ${height / 2} ${strokeWidth / 2}
-          H ${width - height / 2}
-          A ${radius} ${radius} 0 0 1 ${width - strokeWidth / 2} ${centerY}
-          A ${radius} ${radius} 0 0 1 ${width - height / 2} ${height - strokeWidth / 2}
-          H ${height / 2}
-          A ${radius} ${radius} 0 0 1 ${strokeWidth / 2} ${centerY}
-          Z
-        `}
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-      />
-    </svg>
+    <div className="flex justify-center items-center">
+      <svg
+        className="w-full h-full max-w-xs md:max-w-md lg:max-w-lg" // Tailwind classes for responsive sizes
+        viewBox={`0 0 ${width} ${height}`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d={`
+            M ${strokeWidth / 2} ${centerY}
+            A ${radius} ${radius} 0 0 1 ${height / 2} ${strokeWidth / 2}
+            H ${width - height / 2}
+            A ${radius} ${radius} 0 0 1 ${width - strokeWidth / 2} ${centerY}
+            A ${radius} ${radius} 0 0 1 ${width - height / 2} ${height - strokeWidth / 2}
+            H ${height / 2}
+            A ${radius} ${radius} 0 0 1 ${strokeWidth / 2} ${centerY}
+            Z
+          `}
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+        />
+      </svg>
+    </div>
   )
 }
 
 export default WideDMSansO
-
